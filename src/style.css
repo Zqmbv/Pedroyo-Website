@@ -1,0 +1,111 @@
+:root{
+    --BlueDark: #2c2bf9;
+    --Blue: #254bee;
+    --BlueLight: #225ff1;
+    --Yellow: #ddd944;
+    --Purple: #333365;
+    --Red: #e23631;
+    --Brown: #6e3333;
+    --Beige: #c9c8a4;
+    --Orange: #e1a255;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    color: white;
+}
+
+body{
+    display: flex;flex-direction: column;
+    background-color: var(--Purple);
+    max-height: 100dvh;
+}
+
+footer{background-color: var(--BlueDark);text-align: center;}
+
+img{margin: 1rem;}
+
+nav,ul{
+    display: flex;
+}
+
+nav{   
+    position: sticky; top: 0;
+    padding-left: 1rem;
+    z-index: 10000;
+    background-color: var(--Blue);
+}
+
+ul{
+    flex-grow: 1;
+    list-style-type: none;
+}
+
+li{
+    display: flex;
+    align-items: center;
+    transition: all 200ms;
+}
+
+li:hover{
+    background-color: #ffffff15;
+}
+
+.menu{
+    margin: 1rem;
+    text-decoration: none;
+}
+
+.ShoppingCart{
+    border: none;
+    background-color: transparent;
+    transition: all 200ms;
+    width: 75px;
+}
+
+.ShoppingCart:hover{
+    background-color: #ffffff15;
+}
+
+header{
+    background-color: var(--Blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+#banner{
+    width: 50%;
+}
+
+#YellowText{
+    position: absolute;
+    font-size: large;
+    font-weight: 600;
+    color: var(--Yellow);
+    text-shadow: 0px 3px 0px rgb(86, 86, 0);
+
+    animation: YellowText;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes YellowText {
+  0% {
+    transform: translateX(150px) 
+                translateY(100px)
+                rotateZ(-5deg);
+  }
+  100% {
+    transform: translateX(150px) 
+                translateY(100px)
+                rotateZ(-5deg)
+                scale(1.1);
+  }
+}

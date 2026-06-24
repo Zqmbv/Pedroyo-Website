@@ -5,19 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/img/PedroyoGames_Icon.Ico" type="image/x-icon">
     <link rel="stylesheet" href="/src/style.css">
-    <script src="/src/script.js"></script>
+    <script src="/src/script.js" defer></script>
     <title>Pedroyo Games</title>
 </head>
 <body>
+    <nav>
+        <a href="#" class="logo">
+            <img src="/img/PedroyoGames_logo.png" width="100" alt="">
+        </a>
+        
+        <ul>
+            <li><a class="menu" href="#Venta">Catalogo</a></li>
+            <li><a class="menu" href="#ServicioTecnico">Servicio Tecnico</a></li>
+            <li><a class="menu" href="#Comunidad">Comunidad</a></li>
+            <li><a class="menu" href="#Nosotros">Nosotros</a></li>
+        </ul>
+
+        <button class="ShoppingCart">
+            <img src="/img/ShoppingCart.svg" alt="">
+        </button>
+    </nav>
+    
     <header>
-        <img src="/img/PedroyoGames_logo.png" alt="">
+        <img id="banner" src="/img/PedroyoGames_logo.png" alt="">
+        <p id="YellowText">a</p>
     </header>
+    
     <main>
         <section id="Venta"></section>
         <section id="ServicioTecnico"></section>
         <section id="Comunidad"></section>
         <section id="Nosotros"></section>
     </main>
-    <footer></footer>
+    <footer>
+        PedroyoGames &copy; Todos los Derechos Reservados
+    </footer>
 </body>
 </html>
