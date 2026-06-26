@@ -14,74 +14,67 @@
     padding: 0;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
     box-sizing: border-box;
+    list-style: none;
     color: white;
 }
 
-body{
-    display: flex;flex-direction: column;
-    background-color: var(--Purple);
-    max-height: 100dvh;
-}
+body{ background-color: var(--Purple);}
 
 footer{background-color: var(--BlueDark);text-align: center;}
 
-img{margin: 1rem;}
+/* NAV */
 
-nav,ul{
+#NavBar{
+    position: fixed;
+    width: 100%;
     display: flex;
-}
-
-nav{   
-    position: sticky; top: 0;
     padding-left: 1rem;
-    z-index: 10000;
-    background-color: var(--Blue);
+    padding-right: 1rem;
+    z-index: 1000;
+
+    animation: cambiarFondo linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0% 50%;
 }
 
-ul{
-    flex-grow: 1;
-    list-style-type: none;
+#Logo{
+    padding: 0.5rem;
 }
 
-li{
+#NavBarMenu{
     display: flex;
+    flex-grow: 1;
     align-items: center;
-    transition: all 200ms;
 }
 
-li:hover{
-    background-color: #ffffff15;
+.NavBarLink{
+    padding: 1.5rem;
 }
 
-.menu{
-    margin: 1rem;
-    text-decoration: none;
-}
-
-.ShoppingCart{
+#ShoppingCart{
+    width: 4rem;
     border: none;
-    background-color: transparent;
-    transition: all 200ms;
-    width: 75px;
+    background: transparent;
 }
 
-.ShoppingCart:hover{
-    background-color: #ffffff15;
+.NavBarLink:hover,#ShoppingCart:hover{
+    background-color: #ffffff11;
 }
+
+/* NAV */
+
+/* HEADER */
 
 header{
-    background-color: var(--Blue);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
 }
 
-#banner{
-    width: 50%;
-}
+#Banner{width: 100%;}
 
 #YellowText{
     position: absolute;
@@ -107,5 +100,14 @@ header{
                 translateY(100px)
                 rotateZ(-5deg)
                 scale(1.1);
+  }
+}
+
+@keyframes cambiarFondo {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: var(--BlueDark);
   }
 }
