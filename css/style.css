@@ -16,6 +16,18 @@
     --Brown: #6e3333;
     --Beige: #c9c8a4;
     --Orange: #e1a255;
+
+    /*IDK*/
+    --BackgroundDark : #2c2bf9;
+    --Background : #254bee;
+    --BackgroundLight : #225ff1;
+    
+    --PrimaryColor : #d922f1;
+    --SecondaryColor: #e23631;
+
+    --AccentColor: #ddd944;
+    --Text : #fff;
+    --TextMuted : #fff9;
 }
 
 *{
