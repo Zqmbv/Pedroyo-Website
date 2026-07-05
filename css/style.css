@@ -7,27 +7,13 @@
 */
 
 :root{
-    --BlueDark: #2c2bf9;
-    --Blue: #254bee;
-    --BlueLight: #225ff1;
-    --Yellow: #ddd944;
-    --Purple: #333365;
-    --Red: #e23631;
-    --Brown: #6e3333;
-    --Beige: #c9c8a4;
-    --Orange: #e1a255;
-
-    /*IDK*/
-    --BackgroundDark : #2c2bf9;
-    --Background : #254bee;
-    --BackgroundLight : #225ff1;
-    
-    --PrimaryColor : #d922f1;
-    --SecondaryColor: #e23631;
-
-    --AccentColor: #ddd944;
-    --Text : #fff;
-    --TextMuted : #fff9;
+    --background: hsl(223, 79%, 49%);
+    --backgroundLight: hsl(from var(--background) h s calc(l + 5));
+    --primary: #FE4A49;
+    --secondary: #49FEFE;
+    --accent: #F9E739;
+    --text: hsl(0, 0%, 100%);
+    --textMuted: hsl(from var(--background) h s calc(l + 5));
 }
 
 *{
@@ -37,11 +23,11 @@
     text-decoration: none;
     box-sizing: border-box;
     list-style: none;
-    color: white;
+    color: var(--text);
 }
 
 footer{
-    background-color: var(--BlueDark);
+    background-color: var(--background);
     text-align: center;
 }
 
@@ -98,8 +84,14 @@ header{
     align-items: center;
     
     background: var(--BlueDark); /* Fallback for browsers that don't support gradients */
-    background: linear-gradient(
-    135deg, var(--BlueDark) 25%, var(--BlueLight) 25%, var(--BlueLight) 50%, var(--BlueDark) 50%, var(--BlueDark) 75%, var(--BlueLight) 75%, var(--BlueLight));
+    background: linear-gradient(135deg,
+        var(--background) 25%,
+        var(--backgroundLight) 25%,
+        var(--backgroundLight) 50%,
+        var(--background) 50%,
+        var(--background) 75%,
+        var(--backgroundLight) 75%,
+        var(--backgroundLight));
     background-size: 40px 40px;
     animation: move 4s linear infinite;
 }
@@ -113,7 +105,7 @@ header{
 #YellowText{
     position: absolute;
     font-weight: 600;
-    color: var(--Yellow);
+    color: var(--accent);
     bottom: 25%;
     text-align: center;
 }
@@ -125,7 +117,7 @@ header{
     background-color: transparent;
   }
   to {
-    background-color: var(--BlueDark);
+    background-color: var(--background);
   }
 }
 
@@ -141,22 +133,57 @@ header{
 
 /* Main */
 main{
-    background-color: var(--Purple);
+    background-color: var(--background);
     position: sticky;
     z-index: 1;
     top: 0;
     box-shadow: 0px 0px 100px black;
-    padding: 1rem 10%;
-}
-
-section{
-    background-color: #225ff1;
-    padding: 1rem;
-    margin: 1rem;
 }
 
 
-iframe{
-    border-radius: 1rem;
-    width: auto;
+
+
+
+/* UBICANOS */
+
+#Nosotros{
+    display: flex;
+}
+
+.title{
+    text-align: center;
+    padding: 0.5rem ;
+}
+
+.info{
+    position: absolute;
+    z-index: 1;
+    width: 150px;
+    right: 0;
+}
+
+.socialMedia li a{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.Whatsapp{background-color: greenyellow;}
+
+.Instagram{background-color: pink;}
+
+.Tiktok{background-color: black;}
+
+.Facebook{background-color: blue;}
+
+#map{
+    width: 100%;
+    position: relative;
+}
+
+/* UBICANOS */
+
+footer{
+    padding-top: 1rem;
+    z-index: 10000;
 }
