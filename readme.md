@@ -45,6 +45,7 @@ Con relación a "Comunidad" ¿Qué aspectos desea destacar?
 Últimas publicaciones en sus redes sociales
 Colaboraciones con personas importantes
 
+LISTO
 Con relación a "Acerca de Nosotros" ¿Qué aspectos desea destacar?
 Ubicación de los locales
 Formas de contacto
