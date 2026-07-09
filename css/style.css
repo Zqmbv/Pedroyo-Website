@@ -24,6 +24,7 @@
     box-sizing: border-box;
     list-style: none;
     color: var(--text);
+    fill: white;
 }
 
 footer{
@@ -108,6 +109,8 @@ header{
     color: var(--accent);
     bottom: 25%;
     text-align: center;
+    font-size: clamp(1px,3vw,40px);
+    transform: translateY(clamp(1px,1vw,40px));
 }
 
 /* HEADER */
@@ -219,49 +222,51 @@ strong{
     padding: 1rem 0 1rem 0;
 }
 
-.title{
+#Nosotros .title{
     text-align: center;
 }
 
-.info{
+#Nosotros .info{
     position: absolute;
     z-index: 1;
     right: 0;
 }
 
-.socialMedia li a{
+#Nosotros .socialMedia li a{
     display: flex;
     align-items: center;
     padding: 0.5rem;
 }
 
-.socialMedia img{
-    width: 25%;
+#Nosotros .socialMedia svg{
+    width: 25px;
     margin: 0.5rem;
 }
 
-.socialMedia li{
+#Nosotros .socialMedia li{
     transition: all 200ms;
 }
 
-.socialMedia li:hover{
+#Nosotros .socialMedia li:hover{
     transform: scale(1.1) translateX(-9px);
     box-shadow: 0px 0px 10px black;
     border-radius: 1rem 0 0 1rem;
 }
 
-.Whatsapp{background: linear-gradient(135deg, #075E54, #128C7E);}
+#Nosotros .Whatsapp{background: linear-gradient(135deg, #075E54, #128C7E);}
 
-.Instagram{background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);}
+#Nosotros .Instagram{background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);}
 
-.Tiktok{background: linear-gradient(45deg, #25f4ee 0%, #ff0050 100%);}
+#Nosotros .Tiktok{background: linear-gradient(45deg, #25f4ee 0%, #ff0050 100%);
+    svg{width: 15px;margin: 0.5rem 1rem;}
+}
 
-.Facebook{
+#Nosotros .Facebook{
     background: linear-gradient(to bottom, #4c69ba 0%, #3b55a0 100%);
     border-radius: 0 0 0 1rem;
 }
 
-#map{
+#Nosotros #map{
     width: 100%;
     height: 500px;
     position: relative;
