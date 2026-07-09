@@ -136,7 +136,7 @@ export function Hero() {
           >
             <div className="relative pg-clip pg-glass pg-edge-cyan p-2">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1758410473619-c204b1bcf13a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                src="img/tecnico.png"
                 alt="Gamers jugando en una sala oscura con luces neón"
                 className="pg-clip h-[420px] w-full object-cover contrast-110 saturate-[1.15]"
               />
