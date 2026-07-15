@@ -1,19 +1,11 @@
-/* 
-    NOTA: ORDEN DE TRABAJO
-
-    1. ID, CLASS, ETIQUETAS...
-    2. KEYFRAMES
-    3. MEDIA QUERY (RESPONSIVE)
-*/
-
 :root{
-    --background: hsl(223, 79%, 49%);
+    --background: hsl(224, 53%, 13%);
     --backgroundLight: hsl(from var(--background) h s calc(l + 5));
     --primary: #FE4A49;
     --secondary: #49FEFE;
     --accent: #F9E739;
     --text: hsl(0, 0%, 100%);
-    --textMuted: hsl(from var(--background) h s calc(l + 5));
+    --textMuted: hsl(from var(--text) h s calc(l - 25));
 }
 
 *{
@@ -27,63 +19,158 @@
     fill: white;
 }
 
-footer{
+body{
     background-color: var(--background);
-    text-align: center;
 }
 
-/* NAV */
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-#NavBar{
+section{
+    width: 90%;
+    max-width: 1200px;
+
+    animation-name: aparecer;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+    animation-fill-mode: both;
+}
+
+strong{
+    color: var(--primary);
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--accent);
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(100px) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/*------------------------------------------------------------------
+    NAV
+------------------------------------------------------------------*/
+
+#Navegacion{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     position: fixed;
     width: 100%;
-    display: flex;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    top: 0;
     z-index: 1000;
+    transition: all 200ms;
+    padding: 0.5rem 1rem;
 
     animation: cambiarFondo linear both;
     animation-timeline: scroll(root);
-    animation-range: 0% 50%;
+    animation-range: 0% 10%;
 }
 
-#Logo{
-    padding: 0.5rem;
-}
-
-#NavBarMenu{
+#Navegacion div{
     display: flex;
-    flex-grow: 1;
-    align-items: center;
+    flex-direction: row;
+    flex: 1;
 }
 
-.NavBarLink{
-    padding: 1.5rem;
+#Enlaces{
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#Enlaces li{
+    padding: 1rem;
+    transition: all 200ms;
+    font-size: small;
+}
+
+#Enlaces li:hover,#Carrito:hover{
+    text-shadow: 0px 0px 10px white;
+    transform: scale(1.1);
+}
+
+#Carrito{
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--background);
     transition: all 200ms;
 }
 
-#ShoppingCart{
-    width: 4rem;
-    border: none;
-    background: transparent;
+#Carrito img{
+    width: 1rem;
 }
 
-.NavBarLink:hover,#ShoppingCart:hover{
-    background-color: #ffffff11;
+#Carrito:hover{
+    background-color: var(--backgroundLight);
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px  var(--backgroundLight);
 }
 
-/* NAV */
+#WhatsappBtn{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 0.5rem;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #128C7E, #25D366);
+    transition: all 200ms;
+}
 
-/* HEADER */
+#WhatsappBtn:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px #25D366;
+}
 
+@media screen and (max-width: 767px) {
+    #Navegacion{
+        flex-direction: column;
+        padding: none;
+    }
+
+    #Navegacion  #Logo{
+        margin: 0.5rem 0 0 0.5rem;
+    }
+}
+
+@keyframes cambiarFondo {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: var(--background);
+  }
+}
+
+/*------------------------------------------------------------------
+    Banner
+------------------------------------------------------------------*/
 header{
     display: flex;
-    position: sticky;
-    top: 0;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    
+    justify-content: center;
+
     background: var(--BlueDark); /* Fallback for browsers that don't support gradients */
     background: linear-gradient(135deg,
         var(--background) 25%,
@@ -97,31 +184,9 @@ header{
     animation: move 4s linear infinite;
 }
 
-#Banner{
+header img{
     width: 50%;
     margin: 10rem;
-    height: auto;
-}
-
-#YellowText{
-    position: absolute;
-    font-weight: 600;
-    color: var(--accent);
-    bottom: 25%;
-    text-align: center;
-    font-size: clamp(1px,3vw,40px);
-    transform: translateY(clamp(1px,1vw,40px));
-}
-
-/* HEADER */
-
-@keyframes cambiarFondo {
-  from {
-    background-color: transparent;
-  }
-  to {
-    background-color: var(--background);
-  }
 }
 
 @keyframes move {
@@ -133,114 +198,55 @@ header{
   }
 }
 
+/*------------------------------------------------------------------
+    Nosotros
+------------------------------------------------------------------*/
 
-/* Main */
-main{
+
+
+#Nosotros, #Info{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    
-    background-color: var(--background);
-    position: sticky;
-    z-index: 1;
-    top: 0;
-    box-shadow: 0px 0px 100px black;
-}
-
-
-/*COMUNIDAD Y REDES SOCIALES*/
-#Comunidad{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Crea dos columnas de idéntico tamaño (50% y 50%) */
-    place-items: center;
     margin: 1rem;
-    max-width: 1000px;
 }
 
-.title2{
-    padding-bottom: 1rem;
-}
-
-strong{
-    color: var(--accent);    
-}
-
-.message{
-    padding: 1rem;
-}
-
-.goto{
-    background-color: var(--primary);
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    transition: all 200ms;
-}
-
-.goto:hover{
-    box-shadow: 0px 0px 10px var(--primary);
-}
-
-.social{
+#Nosotros div{
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-#Comunidad button{
-    background-color: var(--accent);
-    border: none;
-    color: black;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%; 
+#Map {
+    position: relative; 
+    width: 100%;  /* Debe coincidir con el ancho del iframe */
+    height: 500px; /* Debe coincidir con el alto del iframe */
+    overflow: hidden;
 }
 
-.phone{
-    margin: 1rem;
-    border-radius: 1rem;
-    max-width: 350px;
-    height: 525px;
-    overflow: scroll;
-    overflow-x: hidden;
-}
-
-.phone::-webkit-scrollbar {
-    display: none;
-}
-
-
-/*COMUNIDAD Y REDES SOCIALES*/
-
-
-
-/* UBICANOS */
-
-#Nosotros{
+#Map iframe {
     width: 100%;
-    display: flex;
-    padding: 1rem 0 1rem 0;
+    height: 100%;
+    display: block;
+    box-shadow: 0px 0px 10px black;
 }
 
-#Nosotros .title{
-    text-align: center;
-}
-
-#Nosotros .info{
+.socialMedia {
     position: absolute;
-    z-index: 1;
-    right: 0;
+    top: 0; 
+    right: -130px;    
+    z-index: 10;
 }
 
-#Nosotros .socialMedia li a{
+.socialMedia a {
     display: flex;
     align-items: center;
     padding: 0.5rem;
+    z-index: 1;
+    
 }
 
-#Nosotros .socialMedia svg{
-    width: 25px;
+.socialMedia svg{
+    width: 1rem;
     margin: 0.5rem;
+    margin-right: 1rem;
 }
 
 #Nosotros .socialMedia li{
@@ -248,33 +254,52 @@ strong{
 }
 
 #Nosotros .socialMedia li:hover{
-    transform: scale(1.1) translateX(-9px);
+    transform: scale(1.1) translateX(-125px);
     box-shadow: 0px 0px 10px black;
     border-radius: 1rem 0 0 1rem;
 }
 
-#Nosotros .Whatsapp{background: linear-gradient(135deg, #075E54, #128C7E);}
+#Nosotros .Whatsapp{background-color: #25D366;}
 
-#Nosotros .Instagram{background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);}
+#Nosotros .Instagram{background-color: #FF0069;}
 
-#Nosotros .Tiktok{background: linear-gradient(45deg, #25f4ee 0%, #ff0050 100%);
-    svg{width: 15px;margin: 0.5rem 1rem;}
+#Nosotros .Tiktok{background-color:#000000;}
+
+#Nosotros .Facebook{background-color: #0866FF;border-radius: 0 0 0 1rem;}
+
+.Card{
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    background-color: var(--backgroundLight);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: all 200ms;
 }
 
-#Nosotros .Facebook{
-    background: linear-gradient(to bottom, #4c69ba 0%, #3b55a0 100%);
-    border-radius: 0 0 0 1rem;
+
+.Card svg{
+    width: 2.5rem !important;
+    margin: 1rem;
 }
 
-#Nosotros #map{
-    width: 100%;
-    height: 500px;
-    position: relative;
+.Content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-/* UBICANOS */
+.Card:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px black;
+}
 
-footer{
-    padding-top: 1rem;
-    z-index: 10000;
+.Card p{color: var(--textMuted);}
+
+@media screen and (max-width: 767px) {
+    #Nosotros>div{
+        flex-direction: column;
+    }
 }
