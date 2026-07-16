@@ -6,6 +6,8 @@
     --accent: #F9E739;
     --text: hsl(0, 0%, 100%);
     --textMuted: hsl(from var(--text) h s calc(l - 25));
+    --footer-bg: #020511;
+    --link-hover: #7c53db;
 }
 
 *{
@@ -301,5 +303,181 @@ header img{
 @media screen and (max-width: 767px) {
     #Nosotros>div{
         flex-direction: column;
+    }
+}
+
+/*------------------------------------------------------------------
+    FOOTER
+------------------------------------------------------------------*/
+footer {
+    background-color: var(--footer-bg);
+    padding: 3rem 2rem 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    position: relative;
+    border-top: 3px solid var(--primary);
+    box-shadow: 0px -5px 20px rgba(254, 74, 73, 0.2); 
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.75fr repeat(3, 1fr) 1.2fr; 
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-about {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-about img{
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.footer-about img:hover {
+    transform: scale(1.05);
+}
+
+.logo-subtitle {
+    font-size: 0.95rem;
+    color: var(--secondary); 
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.footer-desc {
+    font-size: 0.85rem;
+    color: var(--textMuted);
+    line-height: 1.6;
+}
+
+.footer-title {
+    color: var(--accent); 
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.link-item {
+    background: none;
+    border: none;
+    color: var(--textMuted);
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.link-item:hover {
+    color: var(--accent);
+    transform: translateX(0.2rem); 
+}
+
+.social-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-icon {
+    --diameter: 3rem;
+    width: var(--diameter);
+    height: var(--diameter);
+    border-radius: 50%;
+    background-color: transparent;
+    border: 3px solid var(--textMuted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px var(--secondary);
+}
+
+.social-icon svg {
+    --diameter: 1.4rem;
+    width: var(--diameter);
+    height: var(--diameter);
+    transition: fill 0.3s ease;
+}
+
+.icon-ig:hover{
+    box-shadow: 0px 0px 15px #7c53db;
+    border: none;
+    background-color: #7c53db;
+}
+/* ESTO ES PARA RELLENAR EL SVG DE LA RED SOCIAL */
+/* .icon-ig:hover svg, .icon-ig:hover svg path {
+    fill: var(--background) !important;
+} */
+
+.icon-tt:hover{
+    box-shadow: 0px 0px 15px #b6b6b6;
+    border: none;
+    background-color: #000000;
+}
+
+.icon-fb:hover{
+    box-shadow: 0px 0px 15px #0c64e7;
+    border: none;
+    background-color: #004bd6;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: var(--textMuted);
+    letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .footer-about {
+        grid-column: span 2;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-about {
+        grid-column: span 1;
+    }
+
+    footer {
+        padding: 2.5rem 1.5rem 1.5rem 1.5rem;
     }
 }
