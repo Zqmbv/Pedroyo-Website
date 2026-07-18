@@ -35,4 +35,21 @@ const FirstPhrase = () => {
 ;
 }
 
-FirstPhrase();
+//FirstPhrase();
+
+function enviarWhatsApp() {
+  const telefono = "584246729511"; // Código de país + número (sin el signo +)
+  const mensaje = "Hola, este mensaje vino desde pedroyo games,";
+  
+  // Codificamos el mensaje para que sea válido en una URL
+  const mensajeCodificado = encodeURIComponent(mensaje);
+  
+  // Creamos el enlace oficial de WhatsApp
+  const url = `https://wa.me/${telefono}?text=${mensajeCodificado}`;
+  
+  // Abrimos la pestaña de WhatsApp
+  window.open(url, '_blank');
+}
+
+// Ejemplo de uso:
+enviarWhatsApp();
