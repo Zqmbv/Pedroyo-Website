@@ -13,13 +13,16 @@
 </head>
 <body>
 
-    <!-- Malla tecnológica de fondo y resplandor -->
+    <!-- Malla tecnológica de fondo que se mueve en diagonal y resplandor radial -->
     <div class="background-grid"></div>
     <div class="background-glow"></div>
 
     <header class="header">
         <div class="header-container">
-            <a href="#" class="logo"><img src="img/PedroyoGames_logo.png" width="96px" alt="Logo PedroyoGames"></a>
+            <!-- LOGO REAL DEL HEADER CON AJUSTE RESPONSIVO E IMAGEN COMPLETA -->
+            <a href="#" class="logo">
+                <img src="img/PedroyoGames_logo.png" alt="PEDROYOGAMES" onerror="this.onerror=null; this.src='https://placehold.co/210x55/0d2554/49FEFE?text=PEDROYOGAMES';">
+            </a>
             
             <nav class="nav" id="navMenu">
                 <a href="#productos" class="nav-link">PRODUCTOS</a>
@@ -52,12 +55,18 @@
     <section class="hero" id="inicio">
         <div class="hero-container">
             <div class="hero-tag">★ MARACAIBO · ZULIA · VENEZUELA ★</div>
-            <img src="img/PedroyoGames_logo.png" width="512px" alt="Logo PedroyoGames">
+            
+            <!-- LOGO REAL DEL ABOVE THE FOLD CON EFECTO DE LEVITACIÓN Y NEÓN RESPONSIVO -->
+            <div class="hero-logo-container">
+                <img src="img/PedroyoGames_logo.png" alt="PEDROYOGAMES LOGO" onerror="this.onerror=null; this.src='https://placehold.co/512x130/0d2554/49FEFE?text=PEDROYOGAMES';">
+            </div>
+
             <p class="hero-description">
                 Tu portal gaming en Maracaibo. Consolas, juegos, componentes PC y servicio técnico especializado con <span class="highlight">garantía real.</span>
             </p>
 
-            <div class="hero-qa">
+            <!-- Caja de preguntas que se actualiza interactivamente por JavaScript -->
+            <div class="hero-qa" id="rotatingQuoteBox">
                 "¿Todavía aceptan juegos usados como parte de pago?"
             </div>
 
@@ -90,9 +99,8 @@
             <button class="filter-btn" data-filter="pc">PC</button>
         </div>
 
-        <!-- Rejilla de productos interactiva -->
         <div class="product-grid" id="productGridContainer">
-            <!-- Los productos se inyectarán de forma dinámica mediante JavaScript para mayor control, filtro y persistencia -->
+            <!-- Inyectado dinámicamente mediante JS -->
         </div>
     </section>
 
@@ -105,10 +113,9 @@
             </p>
 
             <div class="services-grid" id="servicesGridContainer">
-                <!-- Servicios inyectados dinámicamente con JS para añadir al carrito -->
+                <!-- Inyectado dinámicamente mediante JS -->
             </div>
 
-            <!-- Caja amarilla de advertencia -->
             <div class="warning-box">
                 <h4 class="warning-title">¡ATENCIÓN GAMER!</h4>
                 <p class="warning-text">
@@ -125,10 +132,9 @@
             Síguenos en todas nuestras plataformas para descubrir novedades y contenido exclusivo.
         </p>
 
-        <!-- Mosaico / Galería de imágenes (Con marcadores de posición temáticos gamer de alta calidad) -->
         <div class="social-gallery">
             <div class="gallery-item gallery-item-1">
-                <div class="gallery-img-placeholder" style="background-image: url('img/comunidad/images.jpg');"></div>
+                <div class="gallery-img-placeholder" style="background-image: url(img/comunidad/images.jpg);"></div>
                 <div class="gallery-overlay"></div>
             </div>
             <div class="gallery-item gallery-item-2">
@@ -149,7 +155,6 @@
             </div>
         </div>
 
-        <!-- Pills de Enlaces Redes Sociales -->
         <div class="social-pills">
             <a href="https://instagram.com/pedroyogames" target="_blank" class="social-pill social-pill-instagram">
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
@@ -163,9 +168,10 @@
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 <span>FACEBOOK @pedroyogames</span>
             </a>
-            <a href="https://wa.me/584262010020" target="_blank" class="social-pill social-pill-whatsapp">
+            <!-- Botón social sin número definido inicialmente -->
+            <a href="https://wa.me/" target="_blank" class="social-pill social-pill-whatsapp">
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.488 1.451 5.411 1.451 5.58 0 10.125-4.515 10.128-10.067.001-2.69-1.04-5.216-2.93-7.11-1.89-1.893-4.407-2.935-7.1-2.936-5.581 0-10.126 4.516-10.13 10.069-.001 1.983.518 3.921 1.503 5.626l-.993 3.626 3.712-.973zm10.175-7.798c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.669.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.174.2-.298.3-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/></svg>
-                <span>WHATSAPP +58 426-2010020</span>
+                <span>WHATSAPP DE CONTACTO</span>
             </a>
         </div>
     </section>
@@ -178,43 +184,17 @@
         </p>
 
         <div class="about-grid">
-            <!-- Simulación Interactiva de Google Maps -->
             <div class="map-box">
-                <div class="simulated-map" id="interactiveMap">
-                    <!-- Callout flotante simulado estilo Google Maps -->
-                    <div class="map-google-callout">
-                        <h5>C.C. gran bazar maracaibo</h5>
-                        <p>J9RH+FWG, Maracaibo 4005, Zulia</p>
-                        <p>3.0 ★★★★☆ (4 reviews)</p>
-                        <a href="https://maps.app.goo.gl/vApx2x85mZJdStkK8" target="_blank">Ver en Google Maps</a>
-                    </div>
-
-                    <!-- Dibujo estético de calles para dar sensación de mapa técnico -->
-                    <div class="map-vector-streets">
-                        <!-- Líneas horizontales (Calles) -->
-                        <div class="street-line" style="top: 20%; left: 0; width: 100%; height: 8px;"></div>
-                        <div class="street-line" style="top: 50%; left: 0; width: 100%; height: 12px;"></div>
-                        <div class="street-line" style="top: 80%; left: 0; width: 100%; height: 8px;"></div>
-                        <!-- Líneas verticales (Avenidas) -->
-                        <div class="street-line" style="top: 0; left: 30%; width: 12px; height: 100%;"></div>
-                        <div class="street-line" style="top: 0; left: 70%; width: 8px; height: 100%;"></div>
-                    </div>
-
-                    <!-- Pin de ubicación interactivo con pulso -->
-                    <div class="pin-container">
-                        <div class="pin-pulse"></div>
-                        <svg viewBox="0 0 24 24" width="40" height="40" fill="var(--red)" style="filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                        </svg>
-                    </div>
-
-                    <div class="map-zoom-tip">
-                        Utiliza la tecla Ctrl junto con la rueda de desplazamiento del mouse para acercar o alejar el mapa
-                    </div>
-                </div>
+                <!-- MAPA REAL DE GOOGLE MAPS IFRAME CON FILTRO SCI-FI ADAPTADO A MÓVILES -->
+                <iframe 
+                    class="google-map-iframe"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.204797220248!2d-71.62468191114499!3d10.6411922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e89990044d49df3%3A0xbe22271b411f738e!2z8J2Rqi7wnZGqLvCdkojwnZKT8J2SgvCdko8g8J2Sg_CdkoLwnZKb8J2SgvCdkpMg8J2SjvCdkoLwnZKT8J2SgvCdkoTwnZKC8J2SivCdkoPwnZKQ!5e0!3m2!1ses-419!2sve!4v1782875417520!5m2!1ses-419!2sve"" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
 
-            <!-- Datos de Contacto directos estilo tarjetas -->
             <div class="info-cards">
                 <div class="info-card">
                     <div class="info-icon-wrapper">
@@ -237,8 +217,8 @@
                     </div>
                     <div class="info-card-text">
                         <h4>WhatsApp</h4>
-                        <p>+58 0426-2010020</p>
-                        <p style="font-size: 0.95rem; color: var(--cyan); margin-top: 4px;">▸ Respuesta en el día</p>
+                        <p>Contacto de Atención</p>
+                        <p style="font-size: 0.95rem; color: var(--cyan); margin-top: 4px;">▸ Respuesta rápida</p>
                     </div>
                 </div>
 
@@ -262,7 +242,10 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-logo-col">
-                <a href="#" class="logo"><img src="img/PedroyoGames_logo.png" width="192px" alt="Logo PedroyoGames"></span></a>
+                <!-- LOGO REAL DEL FOOTER CON AJUSTE RESPONSIVO E IMAGEN COMPLETA -->
+                <a href="#" class="logo-footer">
+                    <img src="img/PedroyoGames_logo.png" alt="PEDROYOGAMES" onerror="this.onerror=null; this.src='https://placehold.co/210x55/020511/49FEFE?text=PEDROYOGAMES';">
+                </a>
                 <div class="footer-subtitle">PedroyoGames C.A. · MARACAIBO</div>
                 <p>
                     Tu portal gaming en Maracaibo. Venta de consolas, juegos retro, componentes de PC y servicio técnico especializado con garantía real.
@@ -301,9 +284,24 @@
             <div>
                 <h4 class="footer-col-title">Síguenos</h4>
                 <div class="footer-social-circles">
-                    <a href="https://instagram.com/pedroyogames" target="_blank" class="social-circle" aria-label="Instagram">IG</a>
-                    <a href="https://tiktok.com/@pedroyogames" target="_blank" class="social-circle" aria-label="TikTok">TT</a>
-                    <a href="https://facebook.com/pedroyogames" target="_blank" class="social-circle" aria-label="Facebook">FB</a>
+                    <!-- Instagram SVG Logo -->
+                    <a href="https://instagram.com/pedroyogames" target="_blank" class="social-circle social-circle-instagram" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                        </svg>
+                    </a>
+                    <!-- TikTok SVG Logo -->
+                    <a href="https://tiktok.com/@pedroyogames" target="_blank" class="social-circle social-circle-tiktok" aria-label="TikTok">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.23.94 1.18 2.27 2 3.74 2.37v4.06c-1.85-.04-3.66-.66-5.16-1.78-.18-.13-.35-.27-.52-.42v6.62c.04 2.11-.7 4.19-2.07 5.79-1.57 1.83-3.9 2.83-6.3 2.73-2.67-.1-5.06-1.58-6.36-3.93-1.3-2.37-1.35-5.26-.14-7.66 1.15-2.28 3.42-3.79 5.96-3.97v4.11c-1.25.13-2.39.81-3.03 1.89-.66 1.08-.75 2.45-.23 3.61.51 1.14 1.59 1.89 2.84 1.95 1.5.07 2.89-.92 3.25-2.37.11-.42.15-.86.15-1.3V.02z"/>
+                        </svg>
+                    </a>
+                    <!-- Facebook SVG Logo -->
+                    <a href="https://facebook.com/pedroyogames" target="_blank" class="social-circle social-circle-facebook" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -312,6 +310,14 @@
             © 2026 PedroyoGames C.A. · Todos los Derechos Reservados · Maracaibo, Venezuela
         </div>
     </footer>
+
+    <!-- Botón Flotante de Atención al Cliente (WhatsApp) -->
+    <a href="https://wa.me/" target="_blank" class="whatsapp-support-btn" aria-label="Atención al Cliente por WhatsApp">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24">
+            <path d="M12.012 2c-5.508 0-9.988 4.479-9.988 9.987 0 1.763.459 3.42 1.263 4.871l-1.343 4.904 5.021-1.317c1.407.766 3.006 1.199 4.707 1.199 5.508 0 9.988-4.479 9.988-9.987 0-5.508-4.479-9.987-9.988-9.987zm4.37 13.7c-.244.685-1.22 1.252-1.677 1.3-.457.049-.893.228-2.894-.567-2.557-1.015-4.159-3.621-4.286-3.792-.127-.171-1.034-1.374-1.013-2.628.021-1.254.679-1.856.933-2.112.254-.255.551-.318.735-.318.184 0 .367.001.529.009.172.008.403-.065.626.471.244.587.828 2.022.902 2.169.074.147.123.318.022.51-.099.191-.148.312-.294.483-.146.171-.313.348-.444.47-.144.135-.295.283-.127.571.168.288.746 1.232 1.6 1.993.109.814 1.487 1.332 1.763 1.446.276.114.436.095.597-.091.161-.187.691-.803.876-1.079.184-.276.368-.231.62-.136.252.093 1.603.756 1.88 1.186.276.43.276.643.153.928z"/>
+        </svg>
+        <span class="support-tooltip">Atención al Cliente</span>
+    </a>
 
     <div class="cart-backdrop" id="cartBackdrop"></div>
     <div class="cart-sidebar" id="cartSidebar">

@@ -1,3 +1,32 @@
+// Array de frases interactivas alusivas a PedroYoGames CC Gran Bazar, Maracaibo
+const ROTATING_QUOTES = [
+    "¿Todavía aceptan juegos usados como parte de pago?",
+    "¡El parche de día uno pesa más que el juego!",
+    "¿Tienen servicio técnico para controles con drift?",
+    "¿En qué planta del CC Gran Bazar están ubicados?",
+    "¡Se fue la luz, guardé la partida a tiempo!",
+    "¿Tienen delivery para la zona norte?"
+];
+
+let currentQuoteIndex = 0;
+
+// Función para cambiar de frase suavemente cada 5 segundos
+function startQuoteRotation() {
+    const quoteElement = document.getElementById('rotatingQuoteBox');
+    if (!quoteElement) return;
+
+    setInterval(() => {
+        quoteElement.classList.add('fade-out');
+
+        setTimeout(() => {
+            currentQuoteIndex = (currentQuoteIndex + 1) % ROTATING_QUOTES.length;
+            quoteElement.textContent = `"${ROTATING_QUOTES[currentQuoteIndex]}"`;
+            quoteElement.classList.remove('fade-out');
+        }, 500);
+
+    }, 5000);
+}
+
 const PRODUCT_DATABASE = [
     {
         id: 'p1',
@@ -189,6 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProducts('todos');
     renderServices();
     updateCartUI();
+    startQuoteRotation(); // Inicializar el rotador de frases gamer
 
     // Lógica para toggle de Menú de Hamburguesa Móvil
     const menuToggleBtn = document.getElementById('menuToggleButton');
@@ -231,7 +261,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuToggleBtn.addEventListener('click', toggleMobileMenu);
 
-    // Cerrar menú móvil al hacer clic en un enlace de navegación
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', closeMobileMenu);
@@ -255,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartCloseBtn = document.getElementById('cartCloseButton');
 
     const openCart = () => {
-        closeMobileMenu(); // Asegurar que cerramos menú si abrimos carrito
+        closeMobileMenu();
         cartSidebar.classList.add('open');
         cartBackdrop.classList.add('show');
     };
@@ -268,13 +297,11 @@ document.addEventListener('DOMContentLoaded', () => {
     cartOpenBtn.addEventListener('click', openCart);
     cartCloseBtn.addEventListener('click', closeCart);
     
-    // Al hacer clic en el fondo oscuro, se cierran tanto el menú móvil como el carrito
     cartBackdrop.addEventListener('click', () => {
         closeCart();
         closeMobileMenu();
     });
 
-    // Acción del botón de Checkout
     document.getElementById('checkoutBtn').addEventListener('click', triggerCheckout);
 });
 
@@ -359,7 +386,6 @@ function addToCart(itemId, type) {
 
     if (!item) return;
 
-    // Revisar si ya está en el carrito
     const existingItem = cart.find(cartItem => cartItem.id === itemId);
 
     if (existingItem) {
@@ -376,7 +402,6 @@ function addToCart(itemId, type) {
 
     saveAndRefreshCart();
     
-    // Efecto visual en el botón flotante del carrito
     const cartTrigger = document.getElementById('cartOpenButton');
     cartTrigger.style.transform = 'scale(1.2)';
     setTimeout(() => {
@@ -412,7 +437,6 @@ function updateCartUI() {
     const totalElement = document.getElementById('cartTotalValue');
     const badgeCountElement = document.getElementById('cartBadgeCount');
 
-    // Actualizar Badge flotante del header
     const totalItemsCount = cart.reduce((total, item) => total + item.quantity, 0);
     badgeCountElement.textContent = totalItemsCount;
 
@@ -470,10 +494,8 @@ function triggerCheckout() {
     const clientName = document.getElementById('clientNameInput').value.trim();
     const clientNameText = clientName ? `Cliente: ${clientName}\n` : 'Cliente: No especificado\n';
     
-    // Teléfono de PedroYoGames Maracaibo
     const phone = "584262010020"; 
     
-    // Formatear el mensaje de forma visual y cyber-estética
     let message = `👾 *PEDROYOGAMES - SOLICITUD DE ORDEN* 👾\n`;
     message += `===============================\n`;
     message += clientNameText;
@@ -493,10 +515,8 @@ function triggerCheckout() {
     message += `===============================\n\n`;
     message += `_Este mensaje fue generado automáticamente desde el catálogo local para iniciar mi pedido. ¿Me confirman disponibilidad y métodos de pago?_`;
 
-    // Codificar el texto para la URL de WhatsApp
     const encodedText = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${phone}?text=${encodedText}`;
 
-    // Abrir en una pestaña nueva
     window.open(whatsappURL, '_blank');
 }
