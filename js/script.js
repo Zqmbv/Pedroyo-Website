@@ -494,7 +494,7 @@ function triggerCheckout() {
     const clientName = document.getElementById('clientNameInput').value.trim();
     const clientNameText = clientName ? `Cliente: ${clientName}\n` : 'Cliente: No especificado\n';
     
-    const phone = "584262010020"; 
+    const phone = "584141651944"; 
     
     let message = `👾 *PEDROYOGAMES - SOLICITUD DE ORDEN* 👾\n`;
     message += `===============================\n`;
