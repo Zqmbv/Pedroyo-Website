@@ -36,10 +36,7 @@ const PRODUCT_DATABASE = [
         price: 450,
         badge: 'DESTACADO',
         badgeType: 'cyan',
-        icon: `<svg viewBox="0 0 24 24" class="product-icon-svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M6 12h4M8 10v4M15 11.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm3 2.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path>
-        </svg>`
+        icon: `<img class="product-img" src="img/productos/PS5 Slim.jpg" alt="">`
     },
     {
         id: 'p2',
@@ -49,13 +46,7 @@ const PRODUCT_DATABASE = [
         price: 320,
         badge: 'POPULAR',
         badgeType: 'cyan',
-        icon: `<svg viewBox="0 0 24 24" class="product-icon-svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="5" width="18" height="14" rx="3"></rect>
-            <line x1="9" y1="5" x2="9" y2="19"></line>
-            <line x1="15" y1="5" x2="15" y2="19"></line>
-            <circle cx="6" cy="12" r="1.5"></circle>
-            <circle cx="18" cy="12" r="1.5"></circle>
-        </svg>`
+        icon: `<img class="product-img" src="img/productos/Nintendo Switch.jpg" alt="">`
     },
     {
         id: 'p3',
@@ -66,76 +57,95 @@ const PRODUCT_DATABASE = [
         originalPrice: 320,
         badge: 'OFERTA',
         badgeType: 'red',
-        icon: `<svg viewBox="0 0 24 24" class="product-icon-svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <circle cx="12" cy="12" r="6" stroke-dasharray="4 2"></circle>
-        </svg>`
+        icon: `<img class="product-img" src="img/productos/XBOX Series X.jpg" alt="">`
     },
     {
         id: 'p4',
-        category: 'accesorio',
-        name: 'DualSense PS5',
-        desc: 'Mando con retroalimentación háptica inmersiva y gatillos adaptables.',
+        category: 'juego',
+        name: 'Super Mario Odyssey',
+        desc: 'Mario viaja por el mundo para salvar a Peach.',
         price: 75,
         badge: '',
-        icon: `<svg viewBox="0 0 24 24" class="product-icon-svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 12h4M8 10v4M14 12h.01M17 12h.01M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
-        </svg>`
+        icon: `<img class="product-img" src="img/productos/Super Mario Odyssey.jpg" alt="">`
     },
     {
         id: 'p5',
         category: 'juego',
-        name: 'Spider-Man 2 (PS5)',
-        desc: 'La aventura definitiva de Peter Parker y Miles Morales en la Nueva York de Marvel.',
+        name: 'FIFA 23',
+        desc: 'MBAPPE.',
         price: 60,
         badge: 'FÍSICO',
         badgeType: 'cyan',
-        icon: `<svg viewBox="0 0 24 24" class="product-icon-svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            <path d="M2 12h20"></path>
-        </svg>`
+        icon: `<img class="product-img" src="img/productos/Fifa 23.jpg" alt="">`
     },
     {
         id: 'p6',
-        category: 'juego',
-        name: 'Zelda: Tears of the Kingdom',
-        desc: 'La secuela épica de Breath of the Wild. Explora los cielos y tierras de Hyrule.',
+        category: 'accesorio',
+        name: 'Control de XBOX Series X',
+        desc: 'Mando con retroalimentación háptica inmersiva y gatillos adaptables.',
         price: 55,
         badge: '',
-        icon: `<svg viewBox="0 0 24 24" class="product-icon-svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="12 2 22 22 2 22"></polygon>
-            <circle cx="12" cy="14" r="3"></circle>
-        </svg>`
+        icon: `<img  class="product-img" src="img/productos/Control  de XBOX.jpg" alt="">`
     },
     {
         id: 'p7',
-        category: 'componente',
-        name: 'SSD NVMe 1TB PS5',
-        desc: 'Amplía el almacenamiento ultra rápido de tu consola. Compatible con heatsink.',
-        price: 85,
-        badge: '',
-        icon: `<svg viewBox="0 0 24 24" class="product-icon-svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="10" width="18" height="4" rx="1"></rect>
-            <line x1="5" y1="12" x2="6" y2="12"></line>
-            <line x1="8" y1="12" x2="10" y2="12"></line>
-            <line x1="12" y1="12" x2="14" y2="12"></line>
-        </svg>`
-    },
-    {
-        id: 'p8',
-        category: 'pc',
-        name: 'PC Gaming RGB Entry',
-        desc: 'Ryzen 5 7600 + RTX 4060 + 16GB DDR5. Armado impecable y garantizado.',
+        category: 'consola-retro',
+        name: 'Nintendo Entertainment System',
+        desc: 'La primera consola de Nintendo.',
         price: 800,
         badge: 'NUEVO',
         badgeType: 'yellow',
-        icon: `<svg viewBox="0 0 24 24" class="product-icon-svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="5" y="2" width="14" height="20" rx="2"></rect>
-            <circle cx="12" cy="18" r="1.5"></circle>
-            <line x1="9" y1="6" x2="15" y2="6"></line>
-            <line x1="9" y1="10" x2="15" y2="10"></line>
-        </svg>`
+        icon: `<img class="product-img" src="img/productos/NES.jpg" alt="">`
+    },
+    {
+        id: 'p8',
+        category: 'consola-retro',
+        name: 'Super Nintendo Entertainment System',
+        desc: 'La segunda consola de Nintendo.',
+        price: 800,
+        badge: 'NUEVO',
+        badgeType: 'yellow',
+        icon: `<img class="product-img" src="img/productos/SNES.jpg" alt="">`
+    },
+        {
+        id: 'p9',
+        category: 'consola-retro',
+        name: 'Ninentdo 64',
+        desc: 'La tercera consola de Nintendo.',
+        price: 800,
+        badge: 'NUEVO',
+        badgeType: 'yellow',
+        icon: `<img class="product-img" src="img/productos/N64.jpg" alt="">`
+    },
+        {
+        id: 'p10',
+        category: 'juego-retro',
+        name: 'Zelda A Link to the Past',
+        desc: 'Un juego de Zelda bien hecho.',
+        price: 800,
+        badge: 'NUEVO',
+        badgeType: 'yellow',
+        icon: `<img class="product-img" src="img/productos/Zelda A Link to the Past.jpg" alt="">`
+    },
+    {
+        id: 'p11',
+        category: 'juego-retro',
+        name: 'Super Mario Bros',
+        desc: 'El que redefinió la industria.',
+        price: 800,
+        badge: 'NUEVO',
+        badgeType: 'yellow',
+        icon: `<img class="product-img" src="img/productos/Super Mario Bros.jpg" alt="">`
+    },
+    {
+        id: 'p12',
+        category: 'juego-retro',
+        name: 'Mario Kart 64',
+        desc: 'El juego de carrera por excelencia.',
+        price: 800,
+        badge: 'NUEVO',
+        badgeType: 'yellow',
+        icon: `<img class="product-img" src="img/productos/Mario Kart 64.jpg" alt="">`
     }
 ];
 
