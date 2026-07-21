@@ -63,7 +63,7 @@ const PRODUCT_DATABASE = [
         id: 'p4',
         category: 'juego',
         name: 'Super Mario Odyssey',
-        desc: 'Mario viaja por el mundo para salvar a Peach.',
+        desc: 'Mario viaja por el mundo para salvar a la princesa Peach.',
         price: 75,
         badge: '',
         icon: `<img class="product-img" src="img/productos/Super Mario Odyssey.jpg" alt="">`
@@ -72,7 +72,7 @@ const PRODUCT_DATABASE = [
         id: 'p5',
         category: 'juego',
         name: 'FIFA 23',
-        desc: 'MBAPPE.',
+        desc: 'El juego de futbol por excelencia.',
         price: 60,
         badge: 'FÍSICO',
         badgeType: 'cyan',
