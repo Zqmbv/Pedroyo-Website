@@ -449,7 +449,7 @@ function updateCartUI() {
     if (cart.length === 0) {
         container.innerHTML = `
             <div class="cart-empty-msg">
-                <div class="cart-empty-icon">🛒</div>
+                <div class="cart-empty-icon"><span class="material-symbols-outlined cart-empty-icon">shopping_cart</span></div>
                 <p>Tu carrito de cotización está vacío.</p>
                 <p style="font-size:0.95rem; color:var(--text-secondary);">Agrega consolas o solicita servicios técnicos para empezar.</p>
             </div>
