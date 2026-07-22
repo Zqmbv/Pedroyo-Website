@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PedroyoGames - Tu Portal Gaming en Maracaibo</title>
+    <meta name="description" content="PedroyoGames en C.C. Gran Bazar, Maracaibo. Venta de consolas, juegos, accesorios y servicio técnico especializado para PS5, Xbox, Nintendo Switch y retro.">
+    
     <link rel="shortcut icon" href="img/PedroyoGames_Icon.Ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Orbitron para títulos de estilo de interfaz de usuario de ciencia ficción y Rajdhani para textos técnicos limpios -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart">
+    <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -22,7 +25,10 @@
         <div class="header-container">
             <!-- LOGO REAL DEL HEADER CON AJUSTE RESPONSIVO E IMAGEN COMPLETA -->
             <a href="#" class="logo">
-                <img src="img/PedroyoGames_logo.png" alt="PEDROYOGAMES" onerror="this.onerror=null; this.src='https://placehold.co/210x55/0d2554/49FEFE?text=PEDROYOGAMES';">
+                <img src="img/PedroyoGames_logo.png" alt="PEDROYOGAMES" onerror="this.onerror=null; this.src='https://placehold.co/210x55/0d2554/49FEFE?text=PedroyoGames';" 
+                width="408" 
+                height="183" 
+                fetchpriority="high">
             </a>
             
             <nav class="nav" id="navMenu">
@@ -54,208 +60,213 @@
         </div>
     </header>
 
-    <section class="hero" id="inicio">
-        <div class="hero-container">
-            <div class="hero-tag">★ MARACAIBO · ZULIA · VENEZUELA ★</div>
-            
-            <!-- LOGO REAL DEL ABOVE THE FOLD CON EFECTO DE LEVITACIÓN Y NEÓN RESPONSIVO -->
-            <div class="hero-logo-container">
-                <img src="img/PedroyoGames_logo.png" alt="PEDROYOGAMES LOGO" onerror="this.onerror=null; this.src='https://placehold.co/512x130/0d2554/49FEFE?text=PEDROYOGAMES';">
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-container">
+
+                <h1 class="sr-only">PedroyoGames - Tu Portal Gaming y Servicio Técnico en Maracaibo</h1>
+                <div class="hero-tag">★ MARACAIBO · ZULIA · VENEZUELA ★</div>
+                
+                <!-- LOGO REAL DEL ABOVE THE FOLD CON EFECTO DE LEVITACIÓN Y NEÓN RESPONSIVO -->
+                <div class="hero-logo-container">
+                    <img src="img/PedroyoGames_logo.png" alt="PEDROYOGAMES LOGO" onerror="this.onerror=null; this.src='https://placehold.co/512x130/0d2554/49FEFE?text=PEDROYOGAMES';">
+                </div>
+
+                <p class="hero-description">
+                    Tu portal gaming en Maracaibo. Consolas, juegos, componentes PC y servicio técnico especializado con <span class="highlight">garantía real.</span>
+                </p>
+
+                <!-- Caja de preguntas que se actualiza interactivamente por JavaScript -->
+                <div class="hero-qa" id="rotatingQuoteBox">
+                    "¿Todavía aceptan juegos usados como parte de pago?"
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#productos" class="btn btn-cyan">VER TIENDA</a>
+                    <a href="#servicios" class="btn btn-outline-red">SERVICIO TÉCNICO</a>
+                </div>
+
+                <!--div class="scroll-indicator">
+                    <span>SCROLL</span>
+                    <div class="line"></div>
+                </div-->
             </div>
+        </section>
 
-            <p class="hero-description">
-                Tu portal gaming en Maracaibo. Consolas, juegos, componentes PC y servicio técnico especializado con <span class="highlight">garantía real.</span>
-            </p>
-
-            <!-- Caja de preguntas que se actualiza interactivamente por JavaScript -->
-            <div class="hero-qa" id="rotatingQuoteBox">
-                "¿Todavía aceptan juegos usados como parte de pago?"
-            </div>
-
-            <div class="hero-actions">
-                <a href="#productos" class="btn btn-cyan">VER TIENDA</a>
-                <a href="#servicios" class="btn btn-outline-red">SERVICIO TÉCNICO</a>
-            </div>
-
-            <!--div class="scroll-indicator">
-                <span>SCROLL</span>
-                <div class="line"></div>
-            </div-->
-        </div>
-    </section>
-
-    <section class="catalog" id="productos">
-        <div class="section-tag">CATÁLOGO</div>
-        <h2 class="section-title">Descubre lo nuevo <span class="cyan-text">en la tienda</span></h2>
-        <p class="section-subtitle">
-            Consolas, juegos físicos y componentes gaming. Todo con garantía y respaldo local en Maracaibo.
-        </p>
-
-        <!-- Filtros interactivos -->
-        <div class="filter-container">
-            <button class="filter-btn active" data-filter="todos">Todos</button>
-            <button class="filter-btn" data-filter="consola">Consolas</button>
-            <button class="filter-btn" data-filter="juego">Juegos</button>
-            <button class="filter-btn" data-filter="accesorio">Accesorios</button>
-            <button class="filter-btn" data-filter="consola-retro">Consolas Retros</button>
-            <button class="filter-btn" data-filter="juego-retro">Juegos Retros</button>
-        </div>
-
-        <div class="product-grid" id="productGridContainer">
-            <!-- Inyectado dinámicamente mediante JS -->
-        </div>
-    </section>
-
-    <section class="services-section" id="servicios">
-        <div class="services-container">
-            <div class="section-tag tag-red">LABORATORIO TÉCNICO</div>
-            <h2 class="section-title">Soporte especializado <span class="red-text">con garantía real</span></h2>
+        <section class="catalog" id="productos">
+            <div class="section-tag">CATÁLOGO</div>
+            <h2 class="section-title">Descubre lo nuevo <span class="cyan-text">en la tienda</span></h2>
             <p class="section-subtitle">
-                Selecciona el servicio que necesitas y agrégalo al carrito para enviarnos un mensaje directo por WhatsApp.
+                Consolas, juegos físicos y componentes gaming. Todo con garantía y respaldo local en Maracaibo.
             </p>
 
-            <div class="services-grid" id="servicesGridContainer">
+            <!-- Filtros interactivos -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="consola">Consolas</button>
+                <button class="filter-btn" data-filter="juego">Juegos</button>
+                <button class="filter-btn" data-filter="accesorio">Accesorios</button>
+                <button class="filter-btn" data-filter="consola-retro">Consolas Retros</button>
+                <button class="filter-btn" data-filter="juego-retro">Juegos Retros</button>
+            </div>
+
+            <div class="product-grid" id="productGridContainer">
                 <!-- Inyectado dinámicamente mediante JS -->
             </div>
+        </section>
 
-            <div class="warning-box">
-                <h4 class="warning-title">¡ATENCIÓN GAMER!</h4>
-                <p class="warning-text">
-                    En nuestro laboratorio nos apasiona la tecnología de entretenimiento. Por ello, <strong>trabajamos única y exclusivamente con consolas de videojuegos y sus accesorios directos.</strong> No realizamos reparaciones de computadoras, laptops, celulares, televisores ni electrodomésticos.
+        <section class="services-section" id="servicios">
+            <div class="services-container">
+                <div class="section-tag tag-red">LABORATORIO TÉCNICO</div>
+                <h2 class="section-title">Soporte especializado <span class="red-text">con garantía real</span></h2>
+                <p class="section-subtitle">
+                    Selecciona el servicio que necesitas y agrégalo al carrito para enviarnos un mensaje directo por WhatsApp.
                 </p>
-            </div>
-        </div>
-    </section>
 
-    <section class="community-section" id="comunidad">
-        <div class="section-tag">COMUNIDAD</div>
-        <h2 class="section-title">Mantente actualizado con <span class="cyan-text">nuestras redes sociales</span></h2>
-        <p class="section-subtitle">
-            Síguenos en todas nuestras plataformas para descubrir novedades y contenido exclusivo.
-        </p>
-
-        <div class="social-gallery">
-            <div class="social-gallery-container">
-                <div class="gallery-item gallery-item-1">
-                    <div class="gallery-img-placeholder" style="background-image: url('img/comunidad/Comunidad1.jpg');"></div>
-                    <div class="gallery-overlay"></div>
-                </div>               
-            </div>
-            <div class="social-gallery-container">
-                <div class="gallery-item gallery-item-2">
-                    <div class="gallery-img-placeholder" style="background-image: url('img/comunidad/Comunidad2.jpg');"></div>
-                    <div class="gallery-overlay"></div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-img-placeholder" style="background-image: url('img/comunidad/Comunidad3.jpg');"></div>
-                    <div class="gallery-overlay"></div>
-                </div>
-                <div class="gallery-item gallery-item-2">
-                    <div class="gallery-img-placeholder" style="background-image: url('img/comunidad/Comunidad6.jpg');"></div>
-                    <div class="gallery-overlay"></div>
+                <div class="services-grid" id="servicesGridContainer">
+                    <!-- Inyectado dinámicamente mediante JS -->
                 </div>
 
-                <div class="gallery-item">
-                    <div class="gallery-img-placeholder" style="background-image: url('img/comunidad/Comunidad5.jpg');"></div>
-                    <div class="gallery-overlay"></div>
-                </div>               
-            </div>
-        </div>
-
-        <div class="social-pills">
-            <a href="https://instagram.com/pedroyogames" target="_blank" class="social-pill social-pill-instagram">
-                <svg viewBox="0 0 24 24" width="20" height="20">
-                    <radialGradient id="rg" cx="20%" cy="100%" r="150%">
-                        <stop offset="0%" stop-color="#fdf497" />
-                        <stop offset="5%" stop-color="#fdf497" />
-                        <stop offset="45%" stop-color="#fd5949" />
-                        <stop offset="60%" stop-color="#d6249f" />
-                        <stop offset="90%" stop-color="#285AEB" />
-                    </radialGradient>
-                    <path fill="url(#rg)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-                <span>INSTAGRAM @pedroyogames</span>
-            </a>
-
-            <a href="https://tiktok.com/@pedroyogames" target="_blank" class="social-pill social-pill-tiktok">
-                <img src="img/redes_sociales/tiktok-white.svg" alt="Instagram" class="social-icon">
-                <span>TIKTOK @pedroyogames</span>
-            </a>
-
-            <a href="https://facebook.com/pedroyogames" target="_blank" class="social-pill social-pill-facebook">
-                <img src="img/redes_sociales/facebook-blue.svg" alt="Instagram" class="social-icon">
-                <span>FACEBOOK @pedroyogames</span>
-            </a>
-
-            <a href="https://wa.me/" target="_blank" class="social-pill social-pill-whatsapp">
-                <img src="img/redes_sociales/whatsapp-green.svg" alt="Instagram" class="social-icon">
-                <span>WHATSAPP DE CONTACTO</span>
-            </a>
-        </div>
-    </section>
-
-    <section class="about-section" id="nosotros">
-        <div class="section-tag">NOSOTROS</div>
-        <h2 class="section-title">Ubícanos en el <span class="cyan-text">C.C Gran Bazar</span></h2>
-        <p class="section-subtitle">
-            Ven a visitarnos directamente en nuestro local comercial en el corazón de Maracaibo.
-        </p>
-
-        <div class="about-grid">
-            <div class="map-box">
-                <!-- MAPA REAL DE GOOGLE MAPS IFRAME CON FILTRO SCI-FI ADAPTADO A MÓVILES -->
-                <iframe 
-                    class="google-map-iframe"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.204797220248!2d-71.62468191114499!3d10.6411922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e89990044d49df3%3A0xbe22271b411f738e!2z8J2Rqi7wnZGqLvCdkojwnZKT8J2SgvCdko8g8J2Sg_CdkoLwnZKb8J2SgvCdkpMg8J2SjvCdkoLwnZKT8J2SgvCdkoTwnZKC8J2SivCdkoPwnZKQ!5e0!3m2!1ses-419!2sve!4v1782875417520!5m2!1ses-419!2sve"" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-
-            <div class="info-cards">
-                <div class="info-card">
-                    <div class="info-icon-wrapper">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                    </div>
-                    <div class="info-card-text">
-                        <h4>Dirección</h4>
-                        <p>C.C Gran Bazar, Local 337 y 1212. Av 15 Delicias, Calle 100, Av. Libertador, Maracaibo 4001, Zulia</p>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <div class="info-icon-wrapper">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                        </svg>
-                    </div>
-                    <div class="info-card-text">
-                        <h4>WhatsApp</h4>
-                        <p>Contacto de Atención</p>
-                        <p style="font-size: 0.95rem; color: var(--cyan); margin-top: 4px;">▸ Respuesta rápida</p>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <div class="info-icon-wrapper">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
-                    </div>
-                    <div class="info-card-text">
-                        <h4>Horarios</h4>
-                        <p>Lun a Sáb — 09:00AM - 5:00PM</p>
-                        <p>Domingos — 09:00AM - 1:00PM</p>
-                    </div>
+                <div class="warning-box">
+                    <h4 class="warning-title">¡ATENCIÓN GAMER!</h4>
+                    <p class="warning-text">
+                        En nuestro laboratorio nos apasiona la tecnología de entretenimiento. Por ello, <strong>trabajamos única y exclusivamente con consolas de videojuegos y sus accesorios directos.</strong> No realizamos reparaciones de computadoras, laptops, celulares, televisores ni electrodomésticos.
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="community-section" id="comunidad">
+            <div class="section-tag">COMUNIDAD</div>
+            <h2 class="section-title">Mantente actualizado con <span class="cyan-text">nuestras redes sociales</span></h2>
+            <p class="section-subtitle">
+                Síguenos en todas nuestras plataformas para descubrir novedades y contenido exclusivo.
+            </p>
+
+            <div class="social-gallery">
+                <div class="social-gallery-container">
+                    <div class="gallery-item gallery-item-1">
+                        <div class="gallery-img-placeholder" style="background-image: url('img/comunidad/Comunidad1.jpg');"></div>
+                        <div class="gallery-overlay"></div>
+                    </div>               
+                </div>
+                <div class="social-gallery-container">
+                    <div class="gallery-item gallery-item-2">
+                        <div class="gallery-img-placeholder" style="background-image: url('img/comunidad/Comunidad2.jpg');"></div>
+                        <div class="gallery-overlay"></div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-img-placeholder" style="background-image: url('img/comunidad/Comunidad3.jpg');"></div>
+                        <div class="gallery-overlay"></div>
+                    </div>
+                    <div class="gallery-item gallery-item-2">
+                        <div class="gallery-img-placeholder" style="background-image: url('img/comunidad/Comunidad6.jpg');"></div>
+                        <div class="gallery-overlay"></div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-img-placeholder" style="background-image: url('img/comunidad/Comunidad5.jpg');"></div>
+                        <div class="gallery-overlay"></div>
+                    </div>               
+                </div>
+            </div>
+
+            <div class="social-pills">
+                <a href="https://instagram.com/pedroyogames" target="_blank" class="social-pill social-pill-instagram">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <radialGradient id="rg" cx="20%" cy="100%" r="150%">
+                            <stop offset="0%" stop-color="#fdf497" />
+                            <stop offset="5%" stop-color="#fdf497" />
+                            <stop offset="45%" stop-color="#fd5949" />
+                            <stop offset="60%" stop-color="#d6249f" />
+                            <stop offset="90%" stop-color="#285AEB" />
+                        </radialGradient>
+                        <path fill="url(#rg)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    <span>INSTAGRAM @pedroyogames</span>
+                </a>
+
+                <a href="https://tiktok.com/@pedroyogames" target="_blank" class="social-pill social-pill-tiktok">
+                    <img src="img/redes_sociales/tiktok-white.svg" alt="Instagram" class="social-icon">
+                    <span>TIKTOK @pedroyogames</span>
+                </a>
+
+                <a href="https://facebook.com/pedroyogames" target="_blank" class="social-pill social-pill-facebook">
+                    <img src="img/redes_sociales/facebook-blue.svg" alt="Instagram" class="social-icon">
+                    <span>FACEBOOK @pedroyogames</span>
+                </a>
+
+                <a href="https://wa.me/" target="_blank" class="social-pill social-pill-whatsapp">
+                    <img src="img/redes_sociales/whatsapp-green.svg" alt="Instagram" class="social-icon">
+                    <span>WHATSAPP DE CONTACTO</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="about-section" id="nosotros">
+            <div class="section-tag">NOSOTROS</div>
+            <h2 class="section-title">Ubícanos en el <span class="cyan-text">C.C Gran Bazar</span></h2>
+            <p class="section-subtitle">
+                Ven a visitarnos directamente en nuestro local comercial en el corazón de Maracaibo.
+            </p>
+
+            <div class="about-grid">
+                <div class="map-box">
+                    <!-- MAPA REAL DE GOOGLE MAPS IFRAME CON FILTRO SCI-FI ADAPTADO A MÓVILES -->
+                    <iframe 
+                        class="google-map-iframe"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.204797220248!2d-71.62468191114499!3d10.6411922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e89990044d49df3%3A0xbe22271b411f738e!2z8J2Rqi7wnZGqLvCdkojwnZKT8J2SgvCdko8g8J2Sg_CdkoLwnZKb8J2SgvCdkpMg8J2SjvCdkoLwnZKT8J2SgvCdkoTwnZKC8J2SivCdkoPwnZKQ!5e0!3m2!1ses-419!2sve!4v1782875417520!5m2!1ses-419!2sve"" 
+                        title="Ubicación de PedroyoGames en Google Maps"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-icon-wrapper">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="info-card-text">
+                            <h3>Dirección</h4>
+                            <p>C.C Gran Bazar, Local 337 y 1212. Av 15 Delicias, Calle 100, Av. Libertador, Maracaibo 4001, Zulia</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon-wrapper">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="info-card-text">
+                            <h3>WhatsApp</h4>
+                            <p>Contacto de Atención</p>
+                            <p style="font-size: 0.95rem; color: var(--cyan); margin-top: 4px;">▸ Respuesta rápida</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon-wrapper">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="info-card-text">
+                            <h3>Horarios</h4>
+                            <p>Lun a Sáb — 09:00AM - 5:00PM</p>
+                            <p>Domingos — 09:00AM - 1:00PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="footer-container">
@@ -332,7 +343,7 @@
     <div class="cart-backdrop" id="cartBackdrop"></div>
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
-            <h3 class="cart-title">ORDEN DE PEDIDO</h3>
+            <h3>class="cart-title">ORDEN DE PEDIDO<h3>
             <button class="cart-close-btn" id="cartCloseButton" aria-label="Cerrar Carrito">×</button>
         </div>
 

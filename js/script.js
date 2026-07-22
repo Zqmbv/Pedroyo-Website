@@ -10,6 +10,44 @@ const ROTATING_QUOTES = [
 
 let currentQuoteIndex = 0;
 
+window.addEventListener('resize', () => {
+    // Si la pantalla supera el tamaño móvil (escritorio)
+    if (window.innerWidth > 795) {
+        const navMenu = document.getElementById('navMenu');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const cartBackdrop = document.getElementById('cartBackdrop');
+        const menuToggleBtn = document.getElementById('menuToggleButton');
+
+        // 1. Ocultar el menú de navegación móvil
+        if (navMenu) {
+            navMenu.classList.remove('open');
+        }
+
+        // 2. Ocultar el carrito de compras lateral
+        if (cartSidebar) {
+            cartSidebar.classList.remove('open');
+        }
+
+        // 3. Quitar el fondo oscuro
+        if (cartBackdrop) {
+            cartBackdrop.classList.remove('show');
+        }
+
+        // 4. Restaurar el icono de hamburguesa si estaba abierto
+        if (menuToggleBtn) {
+            menuToggleBtn.innerHTML = `
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            `;
+        }
+
+        // Restaurar el scroll del documento
+        document.body.style.overflow = '';
+    }
+});
 // Función para cambiar de frase suavemente cada 5 segundos
 function startQuoteRotation() {
     const quoteElement = document.getElementById('rotatingQuoteBox');
@@ -36,7 +74,7 @@ const PRODUCT_DATABASE = [
         price: 450,
         badge: 'DESTACADO',
         badgeType: 'cyan',
-        icon: `<img class="product-img" src="img/productos/PS5 Slim.jpg" alt="">`
+        icon: `<img class="product-img" src="img/productos/PS5 Slim.jpg" alt="" width="300" height="200" loading="lazy">`
     },
     {
         id: 'p2',
@@ -46,7 +84,7 @@ const PRODUCT_DATABASE = [
         price: 320,
         badge: 'POPULAR',
         badgeType: 'cyan',
-        icon: `<img class="product-img" src="img/productos/Nintendo Switch.jpg" alt="">`
+        icon: `<img class="product-img" src="img/productos/Nintendo Switch.jpg" alt="" width="300" height="200" loading="lazy">`
     },
     {
         id: 'p3',
@@ -57,7 +95,7 @@ const PRODUCT_DATABASE = [
         originalPrice: 320,
         badge: 'OFERTA',
         badgeType: 'red',
-        icon: `<img class="product-img" src="img/productos/XBOX Series X.jpg" alt="">`
+        icon: `<img class="product-img" src="img/productos/XBOX Series X.jpg" alt="" width="300" height="200" loading="lazy">`
     },
     {
         id: 'p4',
@@ -66,7 +104,7 @@ const PRODUCT_DATABASE = [
         desc: 'Mario viaja por el mundo para salvar a la princesa Peach.',
         price: 75,
         badge: '',
-        icon: `<img class="product-img" src="img/productos/Super Mario Odyssey.jpg" alt="">`
+        icon: `<img class="product-img" src="img/productos/Super Mario Odyssey.jpg" alt="" width="300" height="200" loading="lazy">`
     },
     {
         id: 'p5',
@@ -76,7 +114,7 @@ const PRODUCT_DATABASE = [
         price: 60,
         badge: 'FÍSICO',
         badgeType: 'cyan',
-        icon: `<img class="product-img" src="img/productos/Fifa 23.jpg" alt="">`
+        icon: `<img class="product-img" src="img/productos/Fifa 23.jpg" alt="" width="300" height="200" loading="lazy">`
     },
     {
         id: 'p6',
@@ -85,7 +123,7 @@ const PRODUCT_DATABASE = [
         desc: 'Mando con retroalimentación háptica inmersiva y gatillos adaptables.',
         price: 55,
         badge: '',
-        icon: `<img  class="product-img" src="img/productos/Control  de XBOX.jpg" alt="">`
+        icon: `<img  class="product-img" src="img/productos/Control  de XBOX.jpg" alt="" width="300" height="200" loading="lazy">`
     },
     {
         id: 'p7',
@@ -95,7 +133,7 @@ const PRODUCT_DATABASE = [
         price: 800,
         badge: 'NUEVO',
         badgeType: 'yellow',
-        icon: `<img class="product-img" src="img/productos/NES.jpg" alt="">`
+        icon: `<img class="product-img" src="img/productos/NES.jpg" alt="" width="300" height="200" loading="lazy">`
     },
     {
         id: 'p8',
@@ -105,7 +143,7 @@ const PRODUCT_DATABASE = [
         price: 800,
         badge: 'NUEVO',
         badgeType: 'yellow',
-        icon: `<img class="product-img" src="img/productos/SNES.jpg" alt="">`
+        icon: `<img class="product-img" src="img/productos/SNES.jpg" alt="" width="300" height="200" loading="lazy">`
     },
         {
         id: 'p9',
@@ -115,7 +153,7 @@ const PRODUCT_DATABASE = [
         price: 800,
         badge: 'NUEVO',
         badgeType: 'yellow',
-        icon: `<img class="product-img" src="img/productos/N64.jpg" alt="">`
+        icon: `<img class="product-img" src="img/productos/N64.jpg" alt="" width="300" height="200" loading="lazy">`
     },
         {
         id: 'p10',
@@ -125,7 +163,7 @@ const PRODUCT_DATABASE = [
         price: 800,
         badge: 'NUEVO',
         badgeType: 'yellow',
-        icon: `<img class="product-img" src="img/productos/Zelda A Link to the Past.jpg" alt="">`
+        icon: `<img class="product-img" src="img/productos/Zelda A Link to the Past.jpg" alt="" width="300" height="200" loading="lazy">`
     },
     {
         id: 'p11',
@@ -135,7 +173,7 @@ const PRODUCT_DATABASE = [
         price: 800,
         badge: 'NUEVO',
         badgeType: 'yellow',
-        icon: `<img class="product-img" src="img/productos/Metroid.jpg" alt="">`
+        icon: `<img class="product-img" src="img/productos/Metroid.jpg" alt="" width="300" height="200" loading="lazy">`
     },
     {
         id: 'p12',
@@ -145,7 +183,7 @@ const PRODUCT_DATABASE = [
         price: 800,
         badge: 'NUEVO',
         badgeType: 'yellow',
-        icon: `<img class="product-img" src="img/productos/Mario Kart 64.jpg" alt="">`
+        icon: `<img class="product-img" src="img/productos/Mario Kart 64.jpg" alt="" width="300" height="200" loading="lazy">`
     }
 ];
 
