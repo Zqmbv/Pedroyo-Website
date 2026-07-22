@@ -145,7 +145,6 @@ body {
     width: 100%;
 }
 
-/* Menú Hamburguesa móvil */
 .menu-toggle {
     display: none;
     background: none;
@@ -596,7 +595,6 @@ body {
     color: var(--bg-deep);
 }
 
-/* FIX ACCESIBILIDAD 1: Texto oscuro para cumplir ratio >4.5:1 sobre fondo rojo */
 .badge-red {
     background-color: #d93837;
     color: #ffffff;
@@ -809,7 +807,6 @@ body {
     font-weight: bold;
 }
 
-/* FIX ACCESIBILIDAD 2: Tono de rojo más claro (#ff6e6d) para garantizar >4.5:1 de contraste en fondo de tarjeta sin cambiar la variable global */
 .btn-service-request {
     width: 100%;
     background: transparent;
@@ -831,7 +828,6 @@ body {
     box-shadow: 0 0 15px var(--red-glow);
 }
 
-/* Caja de advertencia de laboratorio técnico */
 .warning-box {
     max-width: 1100px;
     margin: 0 auto;
@@ -959,7 +955,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* FIX ACCESIBILIDAD 3: Rosa/Magenta más claro (#f7528a) para superar el ratio de 4.5:1 sobre la tarjeta azul (#0d2554) */
 .social-pill-instagram {
     border-color: rgba(247, 82, 138, 0.3);
     color: #ff5390;
@@ -982,7 +977,6 @@ body {
     background: rgba(255, 255, 255, 0.05);
 }
 
-/* FIX ACCESIBILIDAD 4: Azul más claro (#4c93ff) para dar contraste legible frente a #0d2554 */
 .social-pill-facebook {
     border-color: rgba(76, 147, 255, 0.3);
     color: #6ba4ff;
@@ -1230,7 +1224,6 @@ body {
     transform: scale(1.15);
 }
 
-/* Hover específico para Instagram: Color de marca Purpura/Pink */
 .social-circle-instagram:hover {
     color: #ffffff;
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
@@ -1238,7 +1231,6 @@ body {
     box-shadow: 0 0 15px rgba(214, 36, 159, 0.5);
 }
 
-/* Hover específico para TikTok: Gris claro */
 .social-circle-tiktok:hover {
     color: #111111;
     background: #efefef;
@@ -1246,7 +1238,6 @@ body {
     box-shadow: 0 0 15px rgba(239, 239, 239, 0.5);
 }
 
-/* Hover específico para Facebook: Azul Facebook */
 .social-circle-facebook:hover {
     color: #ffffff;
     background: #1877f2;

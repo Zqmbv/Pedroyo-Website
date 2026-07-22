@@ -11,29 +11,25 @@ const ROTATING_QUOTES = [
 let currentQuoteIndex = 0;
 
 window.addEventListener('resize', () => {
-    // Si la pantalla supera el tamaño móvil (escritorio)
+
     if (window.innerWidth > 795) {
         const navMenu = document.getElementById('navMenu');
         const cartSidebar = document.getElementById('cartSidebar');
         const cartBackdrop = document.getElementById('cartBackdrop');
         const menuToggleBtn = document.getElementById('menuToggleButton');
 
-        // 1. Ocultar el menú de navegación móvil
         if (navMenu) {
             navMenu.classList.remove('open');
         }
 
-        // 2. Ocultar el carrito de compras lateral
         if (cartSidebar) {
             cartSidebar.classList.remove('open');
         }
 
-        // 3. Quitar el fondo oscuro
         if (cartBackdrop) {
             cartBackdrop.classList.remove('show');
         }
 
-        // 4. Restaurar el icono de hamburguesa si estaba abierto
         if (menuToggleBtn) {
             menuToggleBtn.innerHTML = `
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -44,10 +40,10 @@ window.addEventListener('resize', () => {
             `;
         }
 
-        // Restaurar el scroll del documento
         document.body.style.overflow = '';
     }
 });
+
 // Función para cambiar de frase suavemente cada 5 segundos
 function startQuoteRotation() {
     const quoteElement = document.getElementById('rotatingQuoteBox');
@@ -258,9 +254,8 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProducts('todos');
     renderServices();
     updateCartUI();
-    startQuoteRotation(); // Inicializar el rotador de frases gamer
+    startQuoteRotation(); // Inicializar el rotador de frases
 
-    // Lógica para toggle de Menú de Hamburguesa Móvil
     const menuToggleBtn = document.getElementById('menuToggleButton');
     const navMenu = document.getElementById('navMenu');
     const bodyOverlay = document.getElementById('cartBackdrop');
